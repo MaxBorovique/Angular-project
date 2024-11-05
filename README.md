@@ -1,20 +1,64 @@
-# Angular Homes App
-- Install Angular if you don't have it installed
 
-  `npm install -g @angular/cli`
 
-- Clone this branch to your local machine
+```markdown
+# Home App
 
-  `git clone -b homes-app-start git@github.com:angular/codelabs.git homes-app`
+Цей проект створено на Angular і використовує `json-server` для роботи з локальною базою даних. `json-server` використовується для емуляції REST API, що дозволяє тестувати API-запити без потреби в реальному сервері.
 
-- Once the code has been downloaded
+## Вимоги
 
-  `cd homes-app`
+- [Node.js](https://nodejs.org/) (версія 12 або вище)
+- [Angular CLI](https://angular.io/cli) (версія 12 або вище)
+- `json-server` (встановлюється через npm)
 
-- Install the depencies
+## Установка
 
-  `npm install` 
+1. Клонувати репозиторій:
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
+   cd your-repo
+   ```
 
-- Run the application 
+2. Встановити залежності:
+   ```bash
+   npm install
+   ```
 
-  `ng serve`# Angular-project
+3. Встановити `json-server` глобально (якщо ще не встановлено):
+   ```bash
+   npm install -g json-server
+   ```
+
+## Запуск проекту
+
+### 1. Запуск `json-server`
+
+`json-server` використовується для запуску локального API. Файл `db.json` містить початкові дані для API.
+
+У кореневій папці проекту запустіть команду:
+   ```bash
+   json-server --watch db.json
+   ```
+
+**Примітка:** За замовчуванням сервер працює на `http://localhost:3000`. Ви можете змінити порт, додавши `--port`, наприклад:
+   ```bash
+   json-server --watch db.json --port 4000
+   ```
+
+### 2. Запуск Angular проекту
+
+Після запуску `json-server` відкрийте новий термінал і виконайте команду для запуску Angular:
+   ```bash
+   ng serve
+   ```
+
+Проект буде доступний за адресою `http://localhost:4200`.
+
+## Використання
+
+Проект дозволяє взаємодіяти з локальною базою даних, яка зберігається в `db.json`. Ви можете додавати, видаляти та змінювати дані через Angular-додаток, і вони будуть автоматично зберігатися в `db.json`.
+
+## Структура проекту
+
+- **db.json** – JSON файл, який служить як база даних для `json-server`.
+- **src/** – папка з вихідним кодом Angular проекту.
